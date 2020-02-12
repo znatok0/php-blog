@@ -1,6 +1,6 @@
 <?php include('header.php');?>
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Add post</div>
@@ -11,10 +11,22 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea cols="10" name="description" class="form-control">
+                        <textarea id="editor" cols="10" name="description" class="form-control"></textarea>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<style>
+    .card{
+        margin-top:5%;
+    }
+</style>
