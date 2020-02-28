@@ -5,7 +5,7 @@
     // echo $post->addPost();
     if(isset($_POST['btnSubmit'])){
         if(!empty($_POST['title']) && !empty($_POST['description'])){
-            $title = $_POST['title'];
+            $title = strip_tags($_POST['title']);
             $description = $_POST['description'];
             $record = $post->addPost($title,$description);
             if($record==True){
